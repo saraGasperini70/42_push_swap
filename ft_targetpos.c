@@ -11,7 +11,7 @@ void    ft_targetpos(t_stack **stack_a, t_stack **stack_b)
     target_pos = 0;
     while (temp)
     {
-        target_pos = ft_gettargetpos(stack_a, temp->index, target_pos);
+        target_pos = ft_gettarget(stack_a, temp->index, INT_MAX, target_pos);
         temp->pos = target_pos;
         temp = temp->next;
     }    

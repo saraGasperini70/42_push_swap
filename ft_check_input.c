@@ -12,14 +12,21 @@ int ft_check_input(char **av)
     nb_zeros = 0;
     while (av[i])
     {
-        if (ft_isnumber(av[i]))
+        if (!ft_isnumber(av[i]))
+        {
+            printf("Devono esserci solo numeri!");
             return (0);
-        nb_zeros = ft_arg_zero(av[i]);
+        }
+        nb_zeros += ft_arg_zero(av[i]);
+        printf("nb_zeros: %d\n", nb_zeros);
         i++;
     }
     if (nb_zeros > 1)
         return (0);
     if (ft_duplicates(av))
+    {
+        printf("Ci sono duplicati!");
         return (0);
+    }
     return (1);
 }

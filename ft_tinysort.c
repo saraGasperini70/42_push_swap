@@ -6,6 +6,11 @@ void    ft_tinysort(t_stack **stack)
 
     if (ft_sorted(*stack))
         return ;
-    else if (stack->next->index == highest)
+    highest = ft_highest_index(*stack);
+    if ((*stack)->index == highest)
+        ft_ra(stack);
+    else if ((*stack)->next->index == highest)
+        ft_rra(stack);
+    if ((*stack)->index > (*stack)->next->index)
         ft_sa(stack);
 }

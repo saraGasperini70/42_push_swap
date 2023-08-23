@@ -8,7 +8,7 @@ void    ft_shiftstack(t_stack **stack_a)
     lowest_pos = ft_lowestposindex(stack_a);
     if (lowest_pos > stack_size / 2)
     {
-        while (lower_pos < stack_size)
+        while (lowest_pos < stack_size)
         {
             ft_rra(stack_a);
             lowest_pos++;

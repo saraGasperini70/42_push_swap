@@ -2,7 +2,7 @@
 
 t_stack *ft_stack_populate(int ac, char **av)
 {
-    t_stack     stack_a;
+    t_stack     *stack_a;
     long int    nb;
     int         i;
 
@@ -13,8 +13,8 @@ t_stack *ft_stack_populate(int ac, char **av)
     {
         nb = ft_atoi(av[i]);
         if (nb > INT_MAX || nb < INT_MIN)
-            ft_error(stack_a, NULL);
-        else if (i == 1)
+            ft_error(&stack_a, NULL);
+        if (i == 1)
             stack_a = ft_newstack((int)nb);
         else
             ft_stackappend(&stack_a, ft_newstack((int)nb));

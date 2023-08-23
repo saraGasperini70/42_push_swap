@@ -9,7 +9,9 @@ int main(int ac, char **av)
     if (ac < 2)
         return (0);
     if (!ft_check_input(av))
+    {
         ft_error(NULL, NULL);
+    }
     stack_b = NULL;
     stack_a = ft_stack_populate(ac, av);
     stack_size = ft_stack_size(stack_a);

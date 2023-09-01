@@ -15,14 +15,10 @@ void    ft_cost(t_stack **stack_a, t_stack **stack_b)
     {
         tmp_b->cost_b = tmp_b->pos;
         if (tmp_b->pos > size_b / 2)
-        {
             tmp_b->cost_b = (size_b - tmp_b->pos) * -1;
-        }
         tmp_b->cost_a = tmp_b->target_pos;
         if (tmp_b->target_pos > size_a / 2)
-        {
             tmp_b->cost_a = (size_a - tmp_b->target_pos) * -1;
-        }
         tmp_b = tmp_b->next;
     }
 }

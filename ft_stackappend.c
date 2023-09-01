@@ -11,6 +11,6 @@ void    ft_stackappend(t_stack **stack, t_stack *new)
         *stack = new;
         return ;
     }
-    tail = ft_stackbeforebottom(*stack);
+    tail = ft_stackbottom(*stack);
     tail->next = new;
 }

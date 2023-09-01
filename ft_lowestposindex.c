@@ -8,6 +8,7 @@ int ft_lowestposindex(t_stack **stack)
     temp = *stack;
     lowest_index = INT_MAX;
     ft_position(stack);
+    lowest_pos = temp->pos;
     while (temp)
     {
         if (temp->index < lowest_index)

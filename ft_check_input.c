@@ -5,28 +5,21 @@ Funzione di check degli argomenti di input: verifica che siano tutti numeri e re
 */
 int ft_check_input(char **av)
 {
-    int nb_zeros;
     int i;
+    int nb_zeros;
 
-    i = 1;
     nb_zeros = 0;
+    i = 1;
     while (av[i])
     {
         if (!ft_isnumber(av[i]))
-        {
-            printf("Devono esserci solo numeri!");
             return (0);
-        }
         nb_zeros += ft_arg_zero(av[i]);
-        printf("nb_zeros: %d\n", nb_zeros);
         i++;
     }
     if (nb_zeros > 1)
         return (0);
     if (ft_duplicates(av))
-    {
-        printf("Ci sono duplicati!");
         return (0);
-    }
     return (1);
 }

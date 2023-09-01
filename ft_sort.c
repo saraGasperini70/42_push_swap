@@ -4,7 +4,7 @@ void    ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
     ft_pushallnotthree(stack_a, stack_b);
     ft_tinysort(stack_a);
-    while (stack_b)
+    while (*stack_b)
     {
         ft_targetpos(stack_a, stack_b);
         ft_cost(stack_a, stack_b);

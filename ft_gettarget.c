@@ -4,6 +4,7 @@ int ft_gettarget(t_stack **stack_a, int b_index, int target_index, int target_po
 {
     t_stack *tmp;
 
+    tmp = *stack_a;
     while (tmp)
     {
         if (tmp->index > b_index && tmp->index < target_index)

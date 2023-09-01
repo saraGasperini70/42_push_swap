@@ -54,6 +54,7 @@ void    ft_rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
 void    ft_rotate(t_stack **stack);
 void    ft_rr(t_stack **stack_a, t_stack **stack_b);
 void    ft_rra(t_stack **stack_a);
+void    ft_rrb(t_stack **stack_b);
 void    ft_rrr(t_stack **stack_a, t_stack **stack_b);
 void    ft_sa(t_stack **stack_a);
 void    ft_shiftstack(t_stack **stack_a);

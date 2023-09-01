@@ -11,7 +11,7 @@ void    ft_pushallnotthree(t_stack **stack_a, t_stack **stack_b)
     i = 0;
     while (stack_size > 6 && i < stack_size && pushed_val < stack_size / 2)
     {
-        if ((*stack_a)->index <= i / 2)
+        if ((*stack_a)->index <= stack_size / 2)
         {
             ft_pb(stack_a, stack_b);
             pushed_val++;

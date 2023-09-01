@@ -11,7 +11,7 @@ void    ft_rotate_b(t_stack **b, int *cost)
         }
         else if (*cost < 0)
         {
-            ft_rra(b);
+            ft_rrb(b);
             (*cost)++;
         }
     }

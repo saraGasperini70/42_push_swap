@@ -10,9 +10,9 @@ void    ft_cheapest(t_stack **stack_a, t_stack **stack_b)
     min_cost = INT_MAX;
     while (tmp)
     {
-        if (ft_nbabs(tmp->cost_a) + ft_nbabs(tmp->cost_b) == ft_nbabs(min_cost))
+        if (ft_nbabs(tmp->cost_a) + ft_nbabs(tmp->cost_b) < ft_nbabs(min_cost))
         {
-            min_cost = ft_nbabs(tmp->cost_a) + ft_nbabs(tmp->cost_b);
+            min_cost = ft_nbabs(tmp->cost_b) + ft_nbabs(tmp->cost_a);
             cost_a = tmp->cost_a;
             cost_b = tmp->cost_b;
         }

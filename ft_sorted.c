@@ -6,8 +6,7 @@ int ft_sorted(t_stack *stack_a)
     {
         if (stack_a->value > stack_a->next->value)
             return (0);
-        else
-            stack_a->value = stack_a->next->value;
+        stack_a = stack_a->next;
     }
     return (1);
 }

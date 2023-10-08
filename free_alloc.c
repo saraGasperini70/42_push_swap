@@ -4,7 +4,7 @@ void    free_alloc(t_stack **stack)
 {
     t_stack *temp;
 
-    if (!stack || !*stack)
+    if (!stack || !(*stack))
         return ;
     while (*stack)
     {

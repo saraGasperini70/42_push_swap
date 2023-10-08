@@ -5,16 +5,16 @@ Funzione di check degli argomenti di input: verifica che siano tutti numeri e re
 */
 int ft_check_input(char **av)
 {
-    int nb_zeros;
     int i;
+    int nb_zeros;
 
-    i = 1;
     nb_zeros = 0;
+    i = 1;
     while (av[i])
     {
-        if (ft_isnumber(av[i]))
+        if (!ft_isnumber(av[i]))
             return (0);
-        nb_zeros = ft_arg_zero(av[i]);
+        nb_zeros += ft_arg_zero(av[i]);
         i++;
     }
     if (nb_zeros > 1)

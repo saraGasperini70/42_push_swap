@@ -12,7 +12,7 @@ int ft_duplicates(char **av)
         while (av[j])
         {
             if (j != i && ft_nbrcmp(av[i], av[j]) == 0)
-                return (0);
+                return (1);
             j++;
         }
         i++;

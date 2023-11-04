@@ -3,7 +3,7 @@ int ft_isnumber(char *av)
 {
     int i;
 
-    i = 0;
+    i = 1;
     if (ft_issign(av[i]) && av[i + 1] != '\0')
     {
         i++;

@@ -13,13 +13,20 @@ int ft_check_input(char **av)
     while (av[i])
     {
         if (!ft_isnumber(av[i]))
+        {            
             return (0);
+        }
         nb_zeros += ft_arg_zero(av[i]);
         i++;
     }
     if (nb_zeros > 1)
+    {
         return (0);
+    }
     if (ft_duplicates(av))
+    {
+        printf("Hello\n");
         return (0);
+    }
     return (1);
-}
+    }

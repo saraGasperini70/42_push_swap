@@ -5,14 +5,16 @@ int ft_duplicates(char **av)
     int i;
     int j;
 
-    i = 1;
+    i = 0;
     while (av[i])
     {
-        j = 1;
+        j = i + 1;
         while (av[j])
         {
             if (j != i && ft_nbrcmp(av[i], av[j]) == 0)
+            {
                 return (1);
+            }
             j++;
         }
         i++;

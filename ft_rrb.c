@@ -3,5 +3,5 @@
 void    ft_rrb(t_stack **stack_b)
 {
     ft_revrot(stack_b);
-    ft_putstr("rrb\n");
+    ft_putstr_fd("rrb\n", 1);
 }

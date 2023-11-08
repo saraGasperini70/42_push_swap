@@ -1,11 +1,11 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <limits.h>
-#include <unistd.h>
-#include <stdio.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <unistd.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -42,7 +42,7 @@ void    ft_pb(t_stack **stack_a, t_stack **stack_b);
 void    ft_position(t_stack **stack);
 void    ft_push(t_stack **src, t_stack **dest);
 void    ft_pushallnotthree(t_stack **stack_a, t_stack **stack_b);
-void    ft_putstr(char *str);
+void	ft_putstr_fd(char *s, int fd);
 void    ft_ra(t_stack **stack_a);
 void    ft_rb(t_stack **stack_b);
 void    ft_revrot_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
@@ -61,11 +61,14 @@ void    ft_shiftstack(t_stack **stack_a);
 void    ft_sort_algo(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void    ft_sort(t_stack **stack_a, t_stack **stack_b);
 int     ft_sorted(t_stack *stack_a);
+char	**ft_split(const char *s, char c);
 t_stack *ft_stack_populate(int ac, char **av);
 int     ft_stack_size(t_stack *stack);
 void    ft_stackappend(t_stack **stack, t_stack *new);
 t_stack *ft_stackbeforebottom(t_stack *stack);
 t_stack *ft_stackbottom(t_stack *stack);
+int		ft_strlen(const char *str);
+char	*ft_substr(char const *s, unsigned int start, int len);
 void    ft_swap(t_stack *stack);
 void    ft_targetpos(t_stack **stack_a, t_stack **stack_b);
 void    ft_tinysort(t_stack **stack);

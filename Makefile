@@ -1,29 +1,36 @@
 NAME = push_swap
 
-SRCS =  free_alloc.c ft_arg_zero.c ft_atoi.c ft_cheapest.c ft_check_input.c ft_cost.c ft_duplicates.c ft_error.c ft_gettarget.c ft_highest_index.c ft_index_value.c ft_is_number.c ft_isdigit.c ft_issign.c ft_lowestposindex.c ft_move.c ft_nbabs.c ft_nbrcmp.c ft_newstack.c ft_pa.c ft_pb.c ft_position.c ft_push.c ft_pushallnotthree.c ft_putstr.c ft_ra.c ft_rb.c ft_revrot_both.c ft_revrot.c ft_rot_both.c ft_rotate_a.c ft_rotate_b.c ft_rotate_both.c ft_rotate.c ft_rr.c ft_rra.c ft_rrb.c ft_rrr.c ft_sa.c ft_shiftstack.c ft_sort_algo.c ft_sort.c ft_sorted.c ft_stack_populate.c ft_stack_size.c ft_stackappend.c ft_stackbeforebottom.c ft_stackbottom.c ft_swap.c ft_targetpos.c ft_tinysort.c main.c 
+SRCS =  number_manipulation.c string_manipulation.c utilities.c ft_arg_zero.c ft_cheapest.c ft_check_input.c ft_cost.c ft_duplicates.c ft_error.c ft_gettarget.c ft_highest_index.c ft_index_value.c ft_lowestposindex.c ft_move.c ft_newstack.c ft_pa.c ft_pb.c ft_position.c ft_push.c ft_pushallnotthree.c ft_ra.c ft_rb.c ft_revrot_both.c ft_revrot.c ft_rot_both.c ft_rotate_a.c ft_rotate_b.c ft_rotate_both.c ft_rotate.c ft_rr.c ft_rra.c ft_rrb.c ft_rrr.c ft_sa.c ft_shiftstack.c ft_sort_algo.c ft_sort.c ft_sorted.c ft_stack_populate.c ft_stack_size.c ft_stackappend.c ft_stackbeforebottom.c ft_stackbottom.c ft_swap.c ft_targetpos.c ft_tinysort.c main.c
 
+#Command Variables
 CC = gcc
-
 FLAGS = -Wextra -Wall -Werror -g
+RM = rm -rf
 
-RM = rm -f
+INC = includes/push_swap.h
 
 OBJ = $(SRCS:.c=.o)
 
-INCS	= -I ./includes/
+#Colors
+BLUE	=	\e[1;34m
+RESET	=	\e[0m
+
+#Commands
+all: $(NAME)
+
+$(NAME): $(OBJ) $(INC)
+	@ $(CC) $(FLAGS) $(OBJ) -o $@
+	@printf "$(BLUE)Compiled Successfully.\n$(RESET)"
 
 %.o:%.c
-	${CC} ${FLAGS} -c $< -o $@
-
-all: ${NAME}
-
-${NAME}:	${OBJ}
-	${CC} ${FLAGS} ${OBJ} -o ${NAME}
+	@ $(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -rf ${OBJ}
+	@$(RM) $(OBJ)
+	@printf "$(BLUE)Objects files deleted.\n$(RESET)"
 
 fclean: clean
-	@rm -f ${NAME}
+	@$(RM) $(NAME)
+	@printf "$(BLUE)Compiled files deleted.\n$(RESET)"
 
 re: fclean all

@@ -60,6 +60,5 @@ int ft_nbrcmp(const char *s1, const char *s2)
         i++;
         j++;
     }
-    printf("%s, %s \n\n\n", s1, s2);
     return ((unsigned char)s1[i] - (unsigned char)s2[j]);
 }

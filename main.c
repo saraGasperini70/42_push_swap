@@ -9,10 +9,10 @@ int	main(int ac, char **av)
 		return (1);
 	else if (ac == 2)
 		av = ft_split(av[1], ' ');
-	stack_b = NULL;
-	stack_a = ft_stack_populate(ac, av);
 	if (!ft_check_input(av))
 		ft_error(NULL, NULL);
+	stack_b = NULL;
+	stack_a = ft_stack_populate(ac, av);
 	if (!ft_sorted(stack_a))
 	{
 		if (ft_stack_size(stack_a) == 2)

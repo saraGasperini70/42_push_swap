@@ -14,6 +14,12 @@ void    ft_sort(t_stack **stack_a, t_stack **stack_b)
         while (len_a-- > 3)
             ft_pb(stack_a, stack_b);
     }
+    ft_tinysort(*stack_a);
+    while (*stack_b)
+    {
+        ft_targetpos(stack_a, stack_b);
+        ft_move(stack_a, stack_b);
+    }
     if (!ft_sorted(*stack_a))
         ft_shiftstack(stack_a);
 }

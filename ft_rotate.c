@@ -5,9 +5,11 @@ void    ft_rotate(t_stack **stack)
     t_stack *tail;
     t_stack *tmp;
 
+    if (stack == NULL || *stack == NULL)
+        return ;
+    tail = ft_stackbottom(*stack);
     tmp = *stack;
     *stack = (*stack)->next;
-    tail = ft_stackbottom(*stack);
     tmp->next = NULL;
     tail->next = tmp;
 }

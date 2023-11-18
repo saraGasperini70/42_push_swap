@@ -1,6 +1,6 @@
 #include "includes/push_swap.h"
 
-void    ft_move(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b)
+void    ft_move(t_stack **stack_a, t_stack **stack_b)
 {
     if (cost_a < 0 && cost_b < 0)
         ft_revrot_both(stack_a, stack_b, &cost_a, &cost_b);
@@ -44,8 +44,20 @@ void    ft_sort(t_stack **stack_a, t_stack **stack_b)
 	while (*stack_b)
 	{
 		ft_targetpos(stack_a, stack_b);
-		//move stack function;
+		ft_move(stack_a, stack_b)
 	}
+	ft_position(stack_a);
     if (!ft_sorted(*stack_a))
         ft_shiftstack(stack_a);
+	smallest = ft_find_smallest(*stack_a);
+	if (smallest->above_median == 1)
+	{
+		while (*stack_a != smallest)
+			ft_ra(stack_a):
+	}
+	else
+	{
+		while (*stack_a != smallest)
+			ft_rra(stack_a)
+	}
 }

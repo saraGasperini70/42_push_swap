@@ -47,8 +47,6 @@ void    ft_sort(t_stack **stack_a, t_stack **stack_b)
 		ft_move(stack_a, stack_b)
 	}
 	ft_position(stack_a);
-    if (!ft_sorted(*stack_a))
-        ft_shiftstack(stack_a);
 	smallest = ft_find_smallest(*stack_a);
 	if (smallest->above_median == 1)
 	{

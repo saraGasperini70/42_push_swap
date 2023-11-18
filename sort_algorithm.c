@@ -21,10 +21,16 @@ void    ft_sort_five(t_stack **stack_a, t_stack **stack_b)
     ft_pb(stack_b, stack_a);
 }
 
+/*L'algoritmo di sorting:
+se la dimensione della stack è cinque, utilizza una funzione apposita,
+altrimenti pusha tutto su stack_b, tranne tre numeri,
+su cui performa un piccolo algoritmo di sorting, per ridurre il numero di mosse;
+re-inizializza i numeri in stack_b, assegnando un target in stack_a ,
+muove i numeri con il costo minore in mosse;*/
 void    ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack	*smallest;
-    int len_a;
+    int		len_a;
 
     len_a = ft_stack_size(*stack_a);
     if (len_a == 5)
@@ -35,17 +41,11 @@ void    ft_sort(t_stack **stack_a, t_stack **stack_b)
             ft_pb(stack_a, stack_b);
     }
     ft_tinysort(stack_a);
-    ft_targetpos(stack_a, stack_b);
+	while (*stack_b)
+	{
+		ft_targetpos(stack_a, stack_b);
+		//move stack function;
+	}
     if (!ft_sorted(*stack_a))
         ft_shiftstack(stack_a);
-}
-
-void ft_sort_algo(t_stack **stack_a, t_stack **stack_b, int stack_size)
-{
-    if (stack_size == 2 && !ft_sorted(*stack_a))
-        ft_sa(stack_a);
-    else if (stack_size == 3)
-        ft_tinysort(stack_a);
-    else if (stack_size > 3 && !ft_sorted(*stack_a))
-        ft_sort(stack_a, stack_b);
 }

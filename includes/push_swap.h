@@ -60,7 +60,6 @@ void    ft_rrb(t_stack **stack_b);
 void    ft_rrr(t_stack **stack_a, t_stack **stack_b);
 void    ft_sa(t_stack **stack_a);
 void    ft_shiftstack(t_stack **stack_a);
-void    ft_sort_algo(t_stack **stack_a, t_stack **stack_b, int stack_size);
 void    ft_sort(t_stack **stack_a, t_stack **stack_b);
 int     ft_sorted(t_stack *stack_a);
 char	**ft_split(const char *s, char c);

@@ -15,54 +15,11 @@ int ft_stack_size(t_stack *stack)
     return (size);
 }
 
-t_stack *ft_stackbottom(t_stack *stack)
+void	ft_update_stack(t_stack *stack_a, t_stack *stack_b)
 {
-    while (stack && stack->next != NULL)
-        stack = stack->next;
-    return (stack);
-}
-
-void    ft_stackappend(t_stack **stack, t_stack *new)
-{
-    t_stack *tail;
-
-    if (!new)
-        return ;
-    if (!*stack)
-    {
-        *stack = new;
-        return ;
-    }
-    tail = ft_stackbottom(*stack);
-    tail->next = new;
-}
-
-t_stack *ft_stackbeforebottom(t_stack *stack)
-{
-    while (stack && stack->next && stack->next->next != NULL)
-        stack = stack->next;
-    return (stack);
-}
-
-t_stack *ft_stack_populate(int ac, char **av)
-{
-    t_stack     *stack_a;
-    long int    nb;
-    int         i;
-
-    stack_a = NULL;
-    nb = 0;
-    i = 1;
-    while (i < ac)
-    {
-        nb = ft_atoi(av[i]);
-        if (nb > INT_MAX || nb < INT_MIN)
-            ft_error(&stack_a, NULL);
-        if (i == 1)
-            stack_a = ft_newstack((int)nb);
-        else
-            ft_stackappend(&stack_a, ft_newstack((int)nb));
-        i++;
-    }
-    return (stack_a);
+	ft_current_position(stack_a);
+	ft_current_position(stack_b);
+	ft_targetpos(stack_a, stack_b);
+	ft_set_price(stack_a, stack_b);
+	ft_set_cheapest(stack_b);
 }

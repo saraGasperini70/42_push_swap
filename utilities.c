@@ -1,18 +1,20 @@
 #include "includes/push_swap.h"
 
-void    free_alloc(t_stack **stack)
+void	free_alloc(t_stack **stack)
 {
-    t_stack *temp;
+	t_stack	*temp;
+	t_stack	*curr;
 
-    if (!stack || !(*stack))
-        return ;
-    while (*stack)
-    {
-        temp = (*stack)->next;
-        free(*stack);
-        *stack = temp;
-    }
-    *stack = NULL;
+	if (stack == NULL || (*stack) == NULL)
+		return ;
+	curr = *stack;
+	while (curr)
+	{
+		temp = curr->next;
+		free(curr);
+		curr = temp;
+	}
+	*stack = NULL;
 }
 
 int	ft_atoi(const char *str)

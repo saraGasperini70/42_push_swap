@@ -4,6 +4,8 @@ t_stack	*ft_find_highest(t_stack *stack)
 	int	highest_value;
 	t_stack	*highest;
 
+	if (stack == NULL)
+		return (NULL);
 	highest_value = INT_MIN;
 	while (stack)
 	{
@@ -21,9 +23,9 @@ void	ft_tinysort(t_stack **stack)
 {
 	t_stack	*highest;
 
+	highest = ft_find_highest(*stack);
 	if (ft_sorted(*stack))
 		return ;
-	highest = ft_find_highest(*stack);
 	if (*stack == highest)
 		ft_ra(stack, 0);
 	else if ((*stack)->next == highest)

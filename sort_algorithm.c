@@ -21,7 +21,7 @@ void	ft_end_rotate(t_stack **stack, t_stack *top, char stack_name)
 	}
 }
 
-void    ft_move(t_stack **stack_a, t_stack **stack_b)
+void	ft_move(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*cheapest;
 
@@ -37,14 +37,16 @@ void    ft_move(t_stack **stack_a, t_stack **stack_b)
 	ft_pa(stack_a, stack_b, 0);
 }
 
-void    ft_sort_five(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 {
-    while (ft_stack_size(*stack_a) > 3)
-    {
-        ft_update_stack(*stack_a, *stack_b);
-        ft_end_rotate(stack_a, ft_find_smallest(*stack_a), 'a');
-    	ft_pb(stack_b, stack_a, 0);
-    }
+	t_stack	*smallest;
+	while (ft_stack_size(*stack_a) > 3)
+	{
+		ft_update_stack(*stack_a, *stack_b);
+		smallest = ft_find_smallest(*stack_a);
+		ft_end_rotate(stack_a, ft_find_smallest(*stack_a), 'a');
+		ft_pb(stack_b, stack_a, 0);
+	}
 }
 
 /*L'algoritmo di sorting:
@@ -53,20 +55,20 @@ altrimenti pusha tutto su stack_b, tranne tre numeri,
 su cui performa un piccolo algoritmo di sorting, per ridurre il numero di mosse;
 re-inizializza i numeri in stack_b, assegnando un target in stack_a ,
 muove i numeri con il costo minore in mosse;*/
-void    ft_sort(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack	*smallest;
-    int		len_a;
+	t_stack	*smallest;
+	int		len_a;
 
-    len_a = ft_stack_size(*stack_a);
-    if (len_a == 5)
-        ft_sort_five(stack_a, stack_b);
-    else
-    {
-        while (len_a-- > 3)
-            ft_pb(stack_a, stack_b, 0);
-    }
-    ft_tinysort(stack_a);
+	len_a = ft_stack_size(*stack_a);
+	if (len_a == 5)
+		ft_sort_five(stack_a, stack_b);
+	else
+	{
+		while (len_a-- > 3)
+			ft_pb(stack_a, stack_b, 0);
+	}
+	ft_tinysort(stack_a);
 	while (*stack_b)
 	{
 		ft_update_stack(*stack_a, *stack_b);

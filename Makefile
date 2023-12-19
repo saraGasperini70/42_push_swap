@@ -11,26 +11,22 @@ INC = includes/push_swap.h
 
 OBJ = $(SRCS:.c=.o)
 
-#Colors
-BLUE	=	\e[1;34m
-RESET	=	\e[0m
-
 #Commands
 all: $(NAME)
 
 $(NAME): $(OBJ) $(INC)
 	@ $(CC) $(FLAGS) $(OBJ) -o $@
-	@printf "$(BLUE)Compiled Successfully.\n$(RESET)"
+	@printf "Compiled Successfully.\n"
 
 %.o:%.c
 	@ $(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJ)
-	@printf "$(BLUE)Objects files deleted.\n$(RESET)"
+	@printf "Objects files deleted.\n"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@printf "$(BLUE)Compiled files deleted.\n$(RESET)"
+	@printf "Compiled files deleted.\n"
 
 re: fclean all

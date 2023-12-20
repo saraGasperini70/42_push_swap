@@ -42,7 +42,7 @@ void    ft_set_price(t_stack *stack_a, t_stack *stack_b)
 	len_b = ft_stack_size(stack_b);
 	while (stack_b)
 	{
-		stack_b->cost = len_b - stack_b->current_pos;
+		stack_b->cost = stack_b->current_pos;
 		if (stack_b->above_median == 0)
 			stack_b->cost = len_b- (stack_b->current_pos);
 		if (stack_b->above_median == 1)

@@ -4,11 +4,11 @@ void	ft_set_target(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack	*current_a;
 	t_stack	*target;
-	int		best_match;
+	long	best_match;
 
 	while (stack_b)
 	{
-		best_match = INT_MAX;
+		best_match = LONG_MAX;
 		current_a = stack_a;
 		while (current_a)
 		{
@@ -19,7 +19,7 @@ void	ft_set_target(t_stack *stack_a, t_stack *stack_b)
 			}
 			current_a = current_a->next;
 		}
-		if (best_match == INT_MAX)
+		if (best_match == LONG_MAX)
 			stack_b->target_pos = ft_find_smallest(stack_a);
 		else
 			stack_b->target_pos = target;
@@ -84,13 +84,13 @@ int ft_stack_size(t_stack *stack)
 {
 	int size;
 
-	size = 0;
-	if (!stack)
+	if (stack == NULL)
 		return (0);
+	size = 0;
 	while (stack)
 	{
-		stack = stack->next;
 		size++;
+		stack = stack->next;
 	}
 	return (size);
 }

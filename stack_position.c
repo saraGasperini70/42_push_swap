@@ -17,7 +17,7 @@ void    ft_current_position(t_stack *stack)
 		else
 			stack->above_median = 0;
 		stack = stack->next;
-		i++;
+		++i;
 	}
 }
 

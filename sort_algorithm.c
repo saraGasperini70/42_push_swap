@@ -7,9 +7,13 @@ void	ft_end_rotate(t_stack **stack, t_stack *top, char stack_name)
 		if (stack_name == 'a')
 		{
 			if (top->above_median == 1)
+			{
 				ft_ra(stack, 0);
+			}
 			else
+			{
 				ft_rra(stack, 0);
+			}
 		}
 		else if (stack_name == 'b')
 		{
@@ -39,13 +43,12 @@ void	ft_move(t_stack **stack_a, t_stack **stack_b)
 
 void	ft_sort_five(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*smallest;
 	while (ft_stack_size(*stack_a) > 3)
 	{
 		ft_update_stack(*stack_a, *stack_b);
-		smallest = ft_find_smallest(*stack_a);
 		ft_end_rotate(stack_a, ft_find_smallest(*stack_a), 'a');
 		ft_pb(stack_b, stack_a, 0);
+		break ;
 	}
 }
 
@@ -61,13 +64,12 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	int		len_a;
 
 	len_a = ft_stack_size(*stack_a);
-	if (len_a == 5)
+	/*if (len_a == 5)
 		ft_sort_five(stack_a, stack_b);
 	else
-	{
-		while (len_a-- > 3)
-			ft_pb(stack_a, stack_b, 0);
-	}
+	{*/
+	while (len_a-- > 3)
+		ft_pb(stack_a, stack_b, 0);
 	ft_tinysort(stack_a);
 	while (*stack_b)
 	{

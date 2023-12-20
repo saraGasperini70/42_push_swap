@@ -51,7 +51,9 @@ int ft_duplicates(char **av)
 
 int ft_sorted(t_stack *stack_a)
 {
-    while (stack_a->next != NULL)
+	if (stack_a == NULL)
+		return (1);
+    while (stack_a->next)
     {
         if (stack_a->value > stack_a->next->value)
             return (0);

@@ -1,6 +1,7 @@
 #include "includes/push_swap.h"
 
-void	ft_revrotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
+void	ft_revrotate_both(t_stack **stack_a, t_stack **stack_b,
+	t_stack *cheapest)
 {
 	if (*stack_a != cheapest->target_pos && *stack_b != cheapest)
 		ft_rrr(stack_a, stack_b, 0);
@@ -10,8 +11,9 @@ void	ft_revrotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
 
 void	ft_reverse_rot(t_stack **stack)
 {
-	t_stack *last;
-	int	stack_len;
+	t_stack	*last;
+	int		stack_len;
+
 	stack_len = ft_stack_size(*stack);
 	if (*stack == NULL || stack == NULL || stack_len == 1)
 		return ;

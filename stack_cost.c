@@ -10,10 +10,10 @@ t_stack	*ft_find_cheapest(t_stack *stack)
 			return (stack);
 		stack = stack->next;
 	}
-	return NULL;
+	return (NULL);
 }
 
-void    ft_set_cheapest(t_stack *stack_b)
+void	ft_set_cheapest(t_stack *stack_b)
 {
 	long	best_match_value;
 	t_stack	*best_match_stack;
@@ -33,7 +33,7 @@ void    ft_set_cheapest(t_stack *stack_b)
 	best_match_stack->is_cheapest = 1;
 }
 
-void    ft_set_price(t_stack *stack_a, t_stack *stack_b)
+void	ft_set_price(t_stack *stack_a, t_stack *stack_b)
 {
 	int	len_a;
 	int	len_b;
@@ -44,7 +44,7 @@ void    ft_set_price(t_stack *stack_a, t_stack *stack_b)
 	{
 		stack_b->cost = stack_b->current_pos;
 		if (stack_b->above_median == 0)
-			stack_b->cost = len_b- (stack_b->current_pos);
+			stack_b->cost = len_b - (stack_b->current_pos);
 		if (stack_b->above_median == 1)
 			stack_b->cost += stack_b->target_pos->current_pos;
 		else

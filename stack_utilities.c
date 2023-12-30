@@ -12,7 +12,8 @@ void	ft_set_target(t_stack *stack_a, t_stack *stack_b)
 		current_a = stack_a;
 		while (current_a)
 		{
-			if (current_a->value > stack_b->value && current_a->value < best_match)
+			if (current_a->value > stack_b->value
+				&& current_a->value < best_match)
 			{
 				best_match = current_a->value;
 				target = current_a;
@@ -29,8 +30,8 @@ void	ft_set_target(t_stack *stack_a, t_stack *stack_b)
 
 void	ft_stackappend(t_stack **stack, int nbr)
 {
-	t_stack *tail;
-	t_stack *number;
+	t_stack	*tail;
+	t_stack	*number;
 
 	if (stack == NULL)
 		return ;
@@ -56,9 +57,9 @@ void	ft_stackappend(t_stack **stack, int nbr)
 
 t_stack	*ft_stack_populate(int ac, char **av, int flag_ac)
 {
-	t_stack	*stack_a;
+	t_stack		*stack_a;
 	long int	nb;
-	int		i;
+	int			i;
 
 	stack_a = NULL;
 	nb = 0;
@@ -72,17 +73,13 @@ t_stack	*ft_stack_populate(int ac, char **av, int flag_ac)
 		i++;
 	}
 	if (flag_ac == 1)
-		while (av)
-		{
-			free(av);
-			av++;
-		}
+		ft_free_matrix(av);
 	return (stack_a);
 }
 
-int ft_stack_size(t_stack *stack)
+int	ft_stack_size(t_stack *stack)
 {
-	int size;
+	int	size;
 
 	if (stack == NULL)
 		return (0);

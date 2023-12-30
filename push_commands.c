@@ -37,4 +37,3 @@ void	ft_pb(t_stack **stack_a, t_stack **stack_b, int checker)
 	if (checker == 0)
 		ft_putstr_fd("pb\n", 1);
 }
-

@@ -11,7 +11,7 @@ void	ft_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
 void	ft_rotate(t_stack **stack)
 {
 	t_stack	*last;
-	int	stack_len;
+	int		stack_len;
 
 	stack_len = ft_stack_size(*stack);
 	if (*stack == NULL || stack == NULL || stack_len == 1)

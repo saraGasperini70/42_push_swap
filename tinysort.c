@@ -1,7 +1,21 @@
 #include "includes/push_swap.h"
+
+char	**ft_argument_check(int ac, char **av)
+{
+	char	**matrix;
+
+	if (ac == 2)
+		matrix = ft_split(av[1], ' ');
+	else
+		matrix = av;
+	if (!ft_check_input(matrix))
+		ft_error(NULL, NULL);
+	return (matrix);
+}
+
 t_stack	*ft_find_highest(t_stack *stack)
 {
-	int	highest_value;
+	int		highest_value;
 	t_stack	*highest;
 
 	if (stack == NULL)

@@ -1,6 +1,6 @@
 #include "includes/push_swap.h"
 
-void    ft_current_position(t_stack *stack)
+void	ft_current_position(t_stack *stack)
 {
 	int	i;
 	int	centre_line;
@@ -21,16 +21,16 @@ void    ft_current_position(t_stack *stack)
 	}
 }
 
-t_stack *ft_find_last(t_stack *head)
+t_stack	*ft_find_last(t_stack *head)
 {
 	if (head == NULL)
-		return NULL;
+		return (NULL);
 	while (head->next)
 		head = head->next;
 	return (head);
 }
 
-t_stack *ft_find_smallest(t_stack *stack)
+t_stack	*ft_find_smallest(t_stack *stack)
 {
 	long	smallest_value;
 	t_stack	*smallest;

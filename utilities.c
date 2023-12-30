@@ -1,5 +1,29 @@
 #include "includes/push_swap.h"
 
+int	ft_matrix_size(char **new_matrix)
+{
+	int	i;
+
+	i = 0;
+	while (new_matrix[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+void	ft_free_matrix(char **av)
+{
+	int	i;
+
+	i = 0;
+	if (av == NULL || *av == NULL)
+		return ;
+	while (av[i])
+		free(av[i++]);
+	free(av[i]);
+}
+
 void	free_alloc(t_stack **stack)
 {
 	t_stack	*temp;
@@ -17,11 +41,11 @@ void	free_alloc(t_stack **stack)
 	*stack = NULL;
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	c;
-	int	neg;
-	int	n;
+	int		c;
+	int		neg;
+	long	n;
 
 	c = 0;
 	neg = 1;

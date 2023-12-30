@@ -34,7 +34,7 @@ void	ft_move(t_stack **stack_a, t_stack **stack_b)
 		&& cheapest->target_pos->above_median == 1)
 		ft_rotate_both(stack_a, stack_b, cheapest);
 	else if (!(cheapest->above_median == 1
-		&& cheapest->target_pos->above_median == 1))
+			&& cheapest->target_pos->above_median == 1))
 		ft_rotate_both(stack_a, stack_b, cheapest);
 	ft_end_rotate(stack_b, cheapest, 'b');
 	ft_end_rotate(stack_a, cheapest->target_pos, 'a');
@@ -64,10 +64,6 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	int		len_a;
 
 	len_a = ft_stack_size(*stack_a);
-	/*if (len_a == 5)
-		ft_sort_five(stack_a, stack_b);
-	else
-	{*/
 	while (len_a-- > 3)
 		ft_pb(stack_a, stack_b, 0);
 	ft_tinysort(stack_a);

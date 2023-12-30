@@ -12,7 +12,6 @@ int	ft_strcmp(char *s1, char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-
 char	*ft_substr(char const *s, unsigned int start, int len)
 {
 	char			*c;
@@ -41,7 +40,6 @@ char	*ft_substr(char const *s, unsigned int start, int len)
 	c[i] = '\0';
 	return (c);
 }
-
 
 static size_t	get_word(const char *string_to_split, char separator)
 {

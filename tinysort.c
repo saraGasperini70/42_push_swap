@@ -12,7 +12,7 @@
 
 #include "includes/push_swap.h"
 
-char	**ft_argument_check(int ac, char **av)
+/*char	**ft_argument_check(int ac, char **av)
 {
 	char	**matrix;
 	int		i;
@@ -32,7 +32,7 @@ char	**ft_argument_check(int ac, char **av)
 	if (!ft_check_input(matrix))
 		ft_error(NULL, NULL, matrix);
 	return (matrix);
-}
+}*/
 
 t_stack	*ft_find_highest(t_stack *stack)
 {

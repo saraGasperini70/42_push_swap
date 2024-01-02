@@ -33,8 +33,8 @@ typedef struct s_stack
 }	t_stack;
 
 /*argument checks*/
-int	ft_strcmp(const char *s1, const char *s2);
-void	ft_arg_check(int ac, char **av, t_stack *stack_a);
+void	ft_arg_check_1(int ac, char **av, t_stack **stack_a);
+void	ft_arg_check_misc(int ac, char **av, t_stack **stack_a);
 
 /*Number Manipulation*/
 int		ft_isnumber(char *av);
@@ -93,6 +93,7 @@ int		ft_stack_size(t_stack *stack);
 void	ft_update_stack(t_stack *stack_a, t_stack *stack_b);
 
 /*String manipulation*/
+int		ft_strcmp(char *s1, char *s2);
 char	*ft_substr(char const *s, unsigned int start, int len);
 char	**ft_split(const char *s, char c);
 void	ft_putstr_fd(char *s, int fd);
@@ -104,7 +105,7 @@ void	ft_sb(t_stack **stack_b, int checker);
 void	ft_ss(t_stack **stack_a, t_stack **stack_b, int checker);
 
 /*Tinysort*/
-char	**ft_argument_check(int ac, char **av);
+//char	**ft_argument_check(int ac, char **av);
 t_stack	*ft_find_highest(t_stack *stack);
 void	ft_tinysort(t_stack **stack);
 

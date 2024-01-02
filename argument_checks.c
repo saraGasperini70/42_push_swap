@@ -12,35 +12,33 @@
 
 #include "includes/push_swap.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] == s2[i])
-	{
-		if (s1[i] == '\0' || s2[i] == '\0')
-			break ;
-		i++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-}
-
-void	ft_arg_check(int ac, char **av, t_stack *stack_a)
+void	ft_arg_check_1(int ac, char **av, t_stack **stack_a)
 {
 	char	**matrix;
 	int		i;
+	int		size;
 
-	i = 0
+	i = 0;
 	while (av[i])
-	{	if (ac == 2)
+	{
+		if (ft_strcmp(av[i], " "))
 		{
-			if (ft_strcmp(av[i], " "))
-				matrix = ft_split(av[1], ' ');
-			size = ft_matrix_size(matrix);
-			printf("%s, %s\n", matrix[0], matrix[1])
-			stack_a = ft_stack_populate(size, matrix, ac == 2);
-			ft_free_matrix(matrix);
+			matrix = ft_split(av[1], ' ');
 		}
+		else
+		{
+			*matrix = av[1];
+		}
+		i++;
+		size = ft_matrix_size(matrix);
+		*stack_a = ft_stack_populate(size, matrix, ac == 2);
+		ft_free_matrix(matrix);
+		if (matrix == NULL)
+			ft_error(NULL, NULL, matrix);
 	}
+}
+
+void	ft_arg_check_misc(int ac, char **av, t_stack **stack_a)
+{
+	*stack_a = ft_stack_populate(ac, av, ac == 2);
 }

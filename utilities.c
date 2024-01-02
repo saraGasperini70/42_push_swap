@@ -29,11 +29,12 @@ void	ft_free_matrix(char **av)
 	int	i;
 
 	i = 0;
-//	if (av == NULL || *av == NULL)
-//		return ;
 	while (av[i])
-		free(av[i++]);
-	free(av[i]);
+	{
+		free(av[i]);
+		i++;
+	}
+	free(av);
 }
 
 void	free_alloc(t_stack **stack)

@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS = main.c number_manipulation.c push_commands.c reverse_rotate_commands.c rotate_command.c sort_algorithm.c stack_check.c stack_cost.c stack_position.c stack_utilities.c string_manipulation.c swap_commands.c tinysort.c utilities.c
+SRCS = argument_checks.c main.c number_manipulation.c push_commands.c reverse_rotate_commands.c rotate_command.c sort_algorithm.c stack_check.c stack_cost.c stack_position.c stack_utilities.c string_manipulation.c swap_commands.c tinysort.c utilities.c
 
 #Command Variables
 CC = gcc

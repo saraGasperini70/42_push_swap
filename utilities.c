@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utilities.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/02 11:49:41 by sgasperi          #+#    #+#             */
+/*   Updated: 2024/01/02 16:07:00 by sgasperi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/push_swap.h"
 
 int	ft_matrix_size(char **new_matrix)
@@ -17,8 +29,8 @@ void	ft_free_matrix(char **av)
 	int	i;
 
 	i = 0;
-	if (av == NULL || *av == NULL)
-		return ;
+//	if (av == NULL || *av == NULL)
+//		return ;
 	while (av[i])
 		free(av[i++]);
 	free(av[i]);

@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_check.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/02 11:49:08 by sgasperi          #+#    #+#             */
+/*   Updated: 2024/01/02 15:49:02 by sgasperi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/push_swap.h"
 
-void	ft_error(t_stack **stack_a, t_stack **stack_b)
+void	ft_error(t_stack **stack_a, t_stack **stack_b, char **matrix)
 {
+	if (matrix == NULL || *matrix == NULL)
+		ft_free_matrix(matrix);
 	if (stack_a == NULL || *stack_a == NULL)
 		free_alloc(stack_a);
 	if (stack_b == NULL || *stack_b == NULL)

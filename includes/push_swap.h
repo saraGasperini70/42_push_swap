@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/02 11:50:33 by sgasperi          #+#    #+#             */
+/*   Updated: 2024/01/02 16:27:38 by sgasperi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -19,6 +31,10 @@ typedef struct s_stack
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }	t_stack;
+
+/*argument checks*/
+int	ft_strcmp(const char *s1, const char *s2);
+void	ft_arg_check(int ac, char **av, t_stack *stack_a);
 
 /*Number Manipulation*/
 int		ft_isnumber(char *av);
@@ -54,7 +70,7 @@ void	ft_sort_five(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort(t_stack **stack_a, t_stack **stack_b);
 
 /*Stack check*/
-void	ft_error(t_stack **stack_a, t_stack **stack_b);
+void	ft_error(t_stack **stack_a, t_stack **stack_b, char **matrix);
 int		ft_arg_zero(char *av);
 int		ft_duplicates(char **av);
 int		ft_sorted(t_stack *stack_a);

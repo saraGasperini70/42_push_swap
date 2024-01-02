@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utilities.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgasperi <sgasperi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/02 11:49:22 by sgasperi          #+#    #+#             */
+/*   Updated: 2024/01/02 15:51:46 by sgasperi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/push_swap.h"
 
 void	ft_set_target(t_stack *stack_a, t_stack *stack_b)
@@ -68,7 +80,7 @@ t_stack	*ft_stack_populate(int ac, char **av, int flag_ac)
 	{
 		nb = ft_atoi(av[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
-			ft_error(&stack_a, NULL);
+			ft_error(&stack_a, NULL, NULL);
 		ft_stackappend(&stack_a, (int)nb);
 		i++;
 	}

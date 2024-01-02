@@ -32,9 +32,9 @@ void	ft_arg_check_1(int ac, char **av, t_stack **stack_a)
 		i++;
 		size = ft_matrix_size(matrix);
 		*stack_a = ft_stack_populate(size, matrix, ac == 2);
-		ft_free_matrix(matrix);
 		if (matrix == NULL)
 			ft_error(NULL, NULL, matrix);
+		//ft_free_matrix(matrix);
 	}
 }
 
